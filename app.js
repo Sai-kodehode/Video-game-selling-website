@@ -109,3 +109,45 @@ const topSellers = [
     logo: "mario-kart-logo.jpg",
   },
 ];
+
+let arrayIndex = 0;
+
+// Function to update content
+function updateContent() {
+  const contentContainer = document.getElementById("contentContainer");
+
+  // Clear existing content
+  while (contentContainer.firstChild) {
+    contentContainer.removeChild(contentContainer.firstChild);
+  }
+
+  // Append new content
+  Object.entries(topSellers[arrayIndex]).forEach(([key, value]) => {
+    const element = document.createElement("p");
+    element.textContent = `${key}: ${value}`;
+    contentContainer.append(element);
+  });
+}
+
+// Function to handle next button click
+function nextContent() {
+  arrayIndex ++;
+  updateContent();
+}
+
+// Function to handle previous button click
+function previousContent() {
+  if (arrayIndex.length < 0)
+  arrayIndex --;
+  else arrayIndex === 9;
+  updateContent();
+}
+
+// Event listener for button click
+document.getElementById("next-button").addEventListener("click", nextContent);
+document
+  .getElementById("previous-button")
+  .addEventListener("click", previousContent);
+
+// Initial call to display content for the first image
+updateContent();
