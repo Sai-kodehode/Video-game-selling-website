@@ -131,15 +131,15 @@ function updateContent() {
 
 // Function to handle next button click
 function nextContent() {
-  arrayIndex ++;
+  if (arrayIndex > 8) arrayIndex = 0;
+  else arrayIndex++;
   updateContent();
 }
 
 // Function to handle previous button click
 function previousContent() {
-  if (arrayIndex.length < 0)
-  arrayIndex --;
-  else arrayIndex === 9;
+  if (arrayIndex === 0) arrayIndex = 9;
+  else arrayIndex--;
   updateContent();
 }
 
@@ -151,3 +151,5 @@ document
 
 // Initial call to display content for the first image
 updateContent();
+
+// HINT: gameLogo.src = `./logo${object.logo}`
