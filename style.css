@@ -1,0 +1,100 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 #info {
+  /* Style for the nested span element */
+  color: green;
+  font-size: 20px;
+}
+
+.infoclass {
+  font-size: 18px;
+  color: aqua;
+}
+
+h1 p {
+  display: inline;
+}
+
+#game-image {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+}
+
+#imageid {
+  position: relative;
+  display: inline-block;
+}
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  /* margin-top: 100px; */
+}
+
+.main-container {
+  height: 100vh;
+  background-image: url(images/background-image.avif);
+  background-size: cover;
+}
+
+#previous-button,
+#next-button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5%;
+}
+#game-details {
+  text-align: center;
+  line-height: 20px;
+  /* margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center; */
+}
+
+nav {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #020f17;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 7px 20px;
+  scroll-behavior: smooth;
+  background-color: aliceblue;
+  border-radius: 2%;
+  margin: 0 100px;
+}
+
+footer p {
+  padding: 20px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: rgb(30, 160, 197);
+}
+#data {
+  width: 400px;
+}
+
+#game-logo {
+  width: 50px;
+  height: 50px;
+}
+
+#game-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 4px solid rgb(34, 7, 150);
+}

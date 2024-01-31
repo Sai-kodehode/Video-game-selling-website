@@ -4,25 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>**The 10 best selling video games of all time**</title>
+    <script src="app.js" defer></script>
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <nav>
-        <button>Home</button>
+        <a href="">Home</a>
+        <a href="">Games</a>
+        <a href="">Contact</a>
       </nav>
     </header>
-    <section id="image-slideshow" class="background-image">
-      <h1>Pictures 📷</h1>
-      <div class="section2">
-        <button id="previous-button">Previous</button>
-        <img id="slideshow-image" src="images/Garrys Mod.png" alt="Image 1" />
-        <button id="next-button">Next</button>
-        <script src="rotating-gamecards.js"></script>
-        <script src="app.js"></script>
+    <!-- Section for image and details -->
+    <section id="image-slideshow" class="main-container">
+      <!-- image container -->
+      <div class="section">
+        <button id="previous-button" onclick="previousBtn()">Previous</button>
+        <div id="imageid">
+          <img id="game-image" alt="Image 1" />
+          <div>
+            <img id="game-logo" alt="logo 1" />
+          </div>
+        </div>
+        <button id="next-button" onclick="nextBtn()">Next</button>
       </div>
-      <div id="contentContainer"></div>
+
+      <!-- Details container -->
+      <div id="game-details">
+        <h1>
+          <span id="info">Title: </span>
+          <p id="game-title" class="infoclass"></p>
+        </h1>
+        <h1>
+          <span id="info">Developer : </span>
+          <p id="game-developer" class="infoclass"></p>
+        </h1>
+        <h1>
+          <span id="info">ReleaseYear :</span>
+          <p id="game-releaseyear" class="infoclass"></p>
+        </h1>
+        <h1>
+          <span id="info">Categories :</span>
+          <p id="game-categories" class="infoclass"></p>
+        </h1>
+        <h1>
+          <span id="info">Desciption :</span>
+          <p id="game-description" class="infoclass"></p>
+        </h1>
+        <h1>
+          <span id="info">Platforms :</span>
+          <p id="game-platforms" class="infoclass"></p>
+        </h1>
+
+        <!-- <img id="game-logo" alt="logo 1" /> -->
+      </div>
     </section>
-    <footer></footer>
+    <footer>
+      <p>Email: topsellergaming@gmail.com</p>
+    </footer>
   </body>
 </html>

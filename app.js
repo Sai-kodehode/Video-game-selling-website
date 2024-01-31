@@ -110,46 +110,75 @@ const topSellers = [
   },
 ];
 
-let arrayIndex = 0;
+const images = [
+  "Grand Theft Auto V.png",
+  "Minecraft.png",
+  "Tetris.png",
+  "Wii Sports.png",
+  "PUBG.png",
+  "Super Mario Bros.png",
+  "ZeldaBoTW.png",
+  "Garrys Mod.png",
+  "RDR2.png",
+  "Mario Kart 8 Deluxe.png",
+];
 
-// Function to update content
-function updateContent() {
-  const contentContainer = document.getElementById("contentContainer");
+const slideshowImage = document.getElementById("game-image");
+currentIndex = 0;
 
-  // Clear existing content
-  while (contentContainer.firstChild) {
-    contentContainer.removeChild(contentContainer.firstChild);
+const logos = [
+  "gtav-logo.jpg",
+  "minecraft-logo.jpg",
+  "tetris-logo.jpg",
+  "wii-sports-logo.png",
+  "pubg-logo.jpg",
+  "super-mario-logo.png",
+  "zelda-botw-logo.jpg",
+  "garrys-mod-logo.jpg",
+  "red-dead-logo.jpg",
+  "mario-kart-logo.jpg",
+];
+
+// const logoDisplay = document.getElementById("game-logo");
+
+function updateDetails(index) {
+  const currentGame = topSellers[index];
+  const titleElement = document.getElementById("game-title");
+
+  // Set the text content of the span inside the title
+  // titleElement.querySelector("span").textContent = currentGame.title;
+  document.getElementById("game-title").innerText = currentGame.title;
+
+  document.getElementById("game-developer").innerText = currentGame.developer;
+  document.getElementById("game-releaseyear").innerText =
+    currentGame.releaseYear;
+  document.getElementById("game-categories").innerText =
+    currentGame.categories.join(", ");
+  document.getElementById("game-description").innerText =
+    currentGame.description;
+  document.getElementById("game-platforms").innerText =
+    currentGame.platforms.join(", ");
+  document.getElementById("game-logo").src = "logos/" + logos[index];
+  document.getElementById("game-logo").alt = currentGame.title + " Logo";
+}
+
+slideshowImage.src = "images/" + images[currentIndex];
+updateDetails(currentIndex);
+
+function nextBtn() {
+  currentIndex++;
+  if (currentIndex === images.length) {
+    currentIndex = 0;
   }
-
-  // Append new content
-  Object.entries(topSellers[arrayIndex]).forEach(([key, value]) => {
-    const element = document.createElement("p");
-    element.textContent = `${key}: ${value}`;
-    contentContainer.append(element);
-  });
+  slideshowImage.src = "images/" + images[currentIndex];
+  updateDetails(currentIndex);
 }
 
-// Function to handle next button click
-function nextContent() {
-  if (arrayIndex > 8) arrayIndex = 0;
-  else arrayIndex++;
-  updateContent();
+function previousBtn() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  slideshowImage.src = "images/" + images[currentIndex];
+  updateDetails(currentIndex);
 }
-
-// Function to handle previous button click
-function previousContent() {
-  if (arrayIndex === 0) arrayIndex = 9;
-  else arrayIndex--;
-  updateContent();
-}
-
-// Event listener for button click
-document.getElementById("next-button").addEventListener("click", nextContent);
-document
-  .getElementById("previous-button")
-  .addEventListener("click", previousContent);
-
-// Initial call to display content for the first image
-updateContent();
-
-// HINT: gameLogo.src = `./logo${object.logo}`
