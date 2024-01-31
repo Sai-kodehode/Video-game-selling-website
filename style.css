@@ -4,61 +4,6 @@ body {
   box-sizing: border-box;
 }
 
-h1 #info {
-  /* Style for the nested span element */
-  color: green;
-  font-size: 20px;
-}
-
-.infoclass {
-  font-size: 18px;
-  color: aqua;
-}
-
-h1 p {
-  display: inline;
-}
-
-#game-image {
-  width: 400px;
-  height: 400px;
-  padding: 20px;
-}
-
-#imageid {
-  position: relative;
-  display: inline-block;
-}
-.section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  /* margin-top: 100px; */
-}
-
-.main-container {
-  /* height: 100vh; */
-  background-image: url(images/background-image.avif);
-  background-size: cover;
-}
-
-#previous-button,
-#next-button {
-  padding: 10px 20px;
-  font-size: 20px;
-  border-radius: 5%;
-}
-#game-details {
-  text-align: center;
-  line-height: 20px;
-  /* margin: 0 auto;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center; */
-}
-
 nav {
   text-align: center;
   padding: 20px 10px;
@@ -74,16 +19,55 @@ nav a {
   margin: 0 100px;
 }
 
-footer p {
-  padding: 20px;
-  width: fit-content;
-  margin: 0 auto;
+h1 #info {
+  /* Style for the nested span element */
+  color: rgb(14, 181, 14);
+  font-size: 20px;
 }
 
-footer {
-  background-color: rgb(30, 160, 197);
-  margin: 0;
+.infoclass {
+  font-size: 18px;
+  color: rgb(81, 191, 191);
 }
+
+h1 p {
+  display: inline;
+}
+
+#game-image {
+  width: 400px;
+  height: 400px;
+  padding: 20px;
+}
+
+#imageid {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-container {
+  background-image: url(images/background-image.avif);
+  background-size: cover;
+}
+
+#previous-button,
+#next-button {
+  padding: 8px 16px;
+  font-size: 20px;
+  border-radius: 5%;
+}
+#game-details {
+  text-align: center;
+  line-height: 20px;
+  padding: 2px 0;
+}
+
 #data {
   width: 400px;
 }
@@ -91,11 +75,19 @@ footer {
 #game-logo {
   width: 50px;
   height: 50px;
-}
-
-#game-logo {
   position: absolute;
   top: 10px;
   right: 10px;
   border: 4px solid rgb(34, 7, 150);
+}
+
+footer p {
+  padding: 20px;
+  width: fit-content;
+  margin: 0 auto;
+  color: rgb(216, 231, 221);
+}
+
+footer {
+  background-color: rgb(30, 160, 197);
 }

@@ -110,6 +110,7 @@ const topSellers = [
   },
 ];
 
+// images array
 const images = [
   "Grand Theft Auto V.png",
   "Minecraft.png",
@@ -125,7 +126,7 @@ const images = [
 
 const slideshowImage = document.getElementById("game-image");
 currentIndex = 0;
-
+// logos array
 const logos = [
   "gtav-logo.jpg",
   "minecraft-logo.jpg",
@@ -139,16 +140,11 @@ const logos = [
   "mario-kart-logo.jpg",
 ];
 
-// const logoDisplay = document.getElementById("game-logo");
-
+// To display details of the selected game
 function updateDetails(index) {
   const currentGame = topSellers[index];
-  const titleElement = document.getElementById("game-title");
 
-  // Set the text content of the span inside the title
-  // titleElement.querySelector("span").textContent = currentGame.title;
   document.getElementById("game-title").innerText = currentGame.title;
-
   document.getElementById("game-developer").innerText = currentGame.developer;
   document.getElementById("game-releaseyear").innerText =
     currentGame.releaseYear;
@@ -161,10 +157,11 @@ function updateDetails(index) {
   document.getElementById("game-logo").src = "logos/" + logos[index];
   document.getElementById("game-logo").alt = currentGame.title + " Logo";
 }
-
+// to get default image and its details
 slideshowImage.src = "images/" + images[currentIndex];
 updateDetails(currentIndex);
 
+//next button
 function nextBtn() {
   currentIndex++;
   if (currentIndex === images.length) {
@@ -174,6 +171,7 @@ function nextBtn() {
   updateDetails(currentIndex);
 }
 
+// previous button
 function previousBtn() {
   currentIndex--;
   if (currentIndex < 0) {
