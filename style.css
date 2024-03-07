@@ -2,32 +2,56 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   text-align: center;
   padding: 20px 10px;
-  background-color: #020f17;
+  width: 100%;
+  top: 0;
+  margin: 0 auto;
+  background-color: #102533;
+  position: fixed;
+  font-size: 20px;
+  z-index: 1;
+}
+
+nav li {
+  list-style-type: none;
 }
 
 nav a {
   text-decoration: none;
   padding: 7px 20px;
   scroll-behavior: smooth;
-  background-color: aliceblue;
+  background-color: rgb(175, 194, 211);
   border-radius: 2%;
-  margin: 0 100px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  color: #022144;
+}
+
+nav a:hover {
+  background-color: rgb(214, 205, 127);
 }
 
 h1 #info {
-  /* Style for the nested span element */
   color: rgb(14, 181, 14);
-  font-size: 20px;
+  font-size: 22px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .infoclass {
   font-size: 18px;
-  color: rgb(81, 191, 191);
+  color: #dafdfd;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 300;
 }
 
 h1 p {
@@ -37,34 +61,50 @@ h1 p {
 #game-image {
   width: 400px;
   height: 400px;
-  padding: 20px;
+  padding: 10px;
 }
 
 #imageid {
   position: relative;
   /* display: inline-block; */
+  margin-top: 100px;
 }
 
 .section {
+  max-width: 80%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  text-align: center;
   align-items: center;
+  /* align-self: center; */
+  /* margin-top: 2%; */
 }
 
 .main-container {
   background-image: url(images/background-image.avif);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #previous-button,
 #next-button {
   padding: 8px 16px;
   font-size: 20px;
-  border-radius: 5%;
+  background-color: rgb(91, 113, 133);
+  border-radius: 120px;
+  cursor: pointer;
+  border: none;
+  color: rgb(238, 248, 248);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 #game-details {
+  max-width: 60%;
+  margin: 0 auto;
   text-align: center;
-  line-height: 20px;
+  line-height: 40px;
   padding: 2px 0;
 }
 
@@ -83,11 +123,42 @@ h1 p {
 
 footer p {
   padding: 20px;
+  font-size: 20px;
   width: fit-content;
   margin: 0 auto;
   color: rgb(216, 231, 221);
 }
 
 footer {
-  background-color: rgb(30, 160, 197);
+  background-color: rgb(127, 159, 190);
+}
+
+@media only screen and (max-width: 800px) {
+  nav {
+    font-size: 16px;
+  }
+
+  nav a {
+    margin-bottom: 10px;
+  }
+  h1 #info {
+    font-size: 18px;
+  }
+
+  .infoclass {
+    font-size: 16px;
+  }
+  #game-image {
+    width: 250px;
+    height: 250px;
+    margin-top: 2%;
+    padding: 20px;
+  }
+  #previous-button,
+  #next-button {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    /* border-radius: 5%; */
+  }
 }
